@@ -1,0 +1,27 @@
+<p style="color: red"><%= notice %></p>
+
+<h1>Wines</h1>
+
+<table id="wines">
+  <thead>
+  <th>Name</th>
+  <th>Type</th>
+  <th>Vintage year</th>
+  </thead>
+  <tbody>
+  <% @wines.each do |wine| %>
+    <%#= render wine %>
+    <tr>
+      <td><%= wine.name %></td>
+      <td><%= wine.wineType %></td>
+      <td><%= wine.vintage %></td>
+      <td>
+        <%= link_to "Show", wine %>
+        <%= link_to "Edit", edit_wine_path(wine.id) %>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<%= link_to "New wine", new_wine_path %>

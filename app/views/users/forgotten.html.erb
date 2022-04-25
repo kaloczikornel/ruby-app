@@ -1,0 +1,14 @@
+<h1>Recover forgotten password</h1>
+
+<fieldset>
+  <legend>Recover forgotten password</legend>
+  <%= form_tag send_forgotten_path, method: :post do %>
+    <div>
+      <%= label_tag :email %>
+      <%= text_field_tag :email, '', size: 40 %>
+    </div>
+    <%= submit_tag "Send" %>
+  <% end %>
+</fieldset>
+
+<%= link_to "Back", :back %>

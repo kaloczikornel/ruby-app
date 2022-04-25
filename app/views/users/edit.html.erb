@@ -1,0 +1,26 @@
+<h1>Profile</h1>
+
+<fieldset>
+  <legend>Edit user profile</legend>
+  <%= form_for @user, url: update_profile_path, method: :put do |form| %>
+    <div>
+      <%= form.label :name %>
+      <%= form.text_field :name, size: 20 %>
+    </div>
+    <div>
+      <%= form.label :email %>
+      <%= form.text_field :email, size: 40 %>
+    </div>
+    <div>
+      <%= form.label :password %>
+      <%= form.password_field :password, size: 20 %>
+    </div>
+    <div>
+      <%= form.label :password_confirmation %>
+      <%= form.password_field :password_confirmation, size: 20 %>
+    </div>
+    <%= form.submit "Update" %>
+  <% end %>
+</fieldset>
+
+<%= link_to "Back", :back %>

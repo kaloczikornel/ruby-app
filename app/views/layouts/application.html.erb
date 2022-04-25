@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Gyakorlat</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+  <%#= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+</head>
+
+<body>
+<div id="page">
+  <div id="header"></div>
+  <div id="main">
+    <div id="menu">
+      <% if logged_in? %>
+        <%= render 'layouts/user_menu' %>
+      <% else %>
+        <%= render 'layouts/guest_menu' %>
+      <% end %>
+    </div>
+    <div id="content">
+      <%= yield %>
+    </div>
+  </div>
+  <div id="footer">
+    RoR, 2022
+  </div>
+</div>
+</body>
+</html>
