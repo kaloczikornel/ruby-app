@@ -1,6 +1,6 @@
 <p>Hello, Valaki!</p>
 <p><%= flash[:notice] %></p>
 
-<p><%= link_to "Profile", profile_path %></p>
+<p><%= link_to "Profile", profile_path(@user.id) %></p>
 <p><%= link_to "Wines", wines_path %></p>
 <p><%= link_to "Logout", logout_path %></p>

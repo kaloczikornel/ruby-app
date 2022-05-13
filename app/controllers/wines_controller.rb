@@ -3,10 +3,7 @@ class WinesController < ApplicationController
 
   def index
     #@wines = Wine.all
-    @w1 = Wine.new name: "Kadarka", wineType: "Red", vintage: 2019, id: 1
-    @w2 = Wine.new name: "Olaszrizling", wineType: "White", vintage: 2018, id: 2
-    @w3 = Wine.new name: "Merlot", wineType: "Rosé", vintage: 2022, id: 3
-    @wines = [ @w1, @w2, @w3 ]
+    @wines = Wine.get_wine_page(params[:page])
   end
   # GET /wines/1 or /wines/1.json
   def show
@@ -14,7 +11,7 @@ class WinesController < ApplicationController
 
   # GET /wines/new
   def new
-    wine = Wine.new
+    @wine = Wine.new
   end
 
   # GET /wines/1/edit
@@ -23,15 +20,15 @@ class WinesController < ApplicationController
 
   # POST /wines or /wines.json
   def create
-    wine = Wine.new(wine_params)
+    @wine = Wine.new(wine_params)
 
     respond_to do |format|
-      if wine.save
-        format.html { redirect_to wine_url(wine), notice: "Wine was successfully created." }
-        format.json { render :show, status: :created, location: wine }
+      if @wine.save
+        format.html { redirect_to wine_url(@wine), notice: "Wine was successfully created." }
+        format.json { render :show, status: :created, location: @wine }
       else
         format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: wine.errors, status: :unprocessable_entity }
+        format.json { render json: @wine.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -62,13 +59,13 @@ class WinesController < ApplicationController
   private
   # Use callbacks to share common setup or constraints between actions.
   def set_wine
-    #wine = Wine.find(params[:id])
-    @wine = Wine.new name: 'Kadarka', wineType: "Red", vintage: 2017, id: 1
+    @wine = Wine.find(params[:id])
+    #@wine = Wine.new name: 'Kadarka', wineType: "Red", vintage: 2017, id: 1
   end
 
   # Only allow a list of trusted parameters through.
   def wine_params
-    params.require(:wine).permit(:name, :wineType)
+    params.require(:wine).permit(:name, :wineType, :vintage)
   end
 
 end
