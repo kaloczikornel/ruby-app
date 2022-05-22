@@ -1,2 +1,10 @@
-<h1>Wines#show</h1>
-<p>Find me in app/views/wines/show.html.erb</p>
+<p style="color: green"><%= notice %></p>
+
+<%= render @wine %>
+
+<div>
+  <%= link_to "Edit this wine", edit_wine_path(@wine) %> |
+  <%= link_to "Back to wines", wines_path %>
+
+  <%= button_to "Delete this wine", @wine, method: :delete %>
+</div>

@@ -156,6 +156,7 @@ GEM
       nokogiri (>= 1.6)
     rails-html-sanitizer (1.4.2)
       loofah (~> 2.3)
+    rails-perftest (0.0.7)
     railties (7.0.2.3)
       actionpack (= 7.0.2.3)
       activesupport (= 7.0.2.3)
@@ -168,6 +169,7 @@ GEM
     reline (0.3.1)
       io-console (~> 0.5)
     rexml (3.2.5)
+    ruby-prof (1.4.3)
     rubyzip (2.3.2)
     selenium-webdriver (4.1.0)
       childprocess (>= 0.5, < 5.0)
@@ -219,6 +221,8 @@ DEPENDENCIES
   jbuilder
   puma (~> 5.0)
   rails (~> 7.0.2, >= 7.0.2.3)
+  rails-perftest
+  ruby-prof
   selenium-webdriver
   sprockets-rails
   sqlite3 (~> 1.4)

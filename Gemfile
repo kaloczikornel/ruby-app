@@ -8,6 +8,10 @@ gem "rails", "~> 7.0.2", ">= 7.0.2.3"
 
 gem 'will_paginate'
 
+gem 'rails-perftest'
+
+gem 'ruby-prof'
+
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 

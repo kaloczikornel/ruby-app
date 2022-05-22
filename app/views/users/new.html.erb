@@ -13,7 +13,7 @@
 
 <fieldset>
   <legend>Register a new user</legend>
-  <%= form_for @user, url: create_user_path, method: :post do |form| %>
+  <%= form_for @user, method: :post do |form| %>
     <div>
       <%= form.label :name %>
       <%= form.text_field :name, size: 20 %>
